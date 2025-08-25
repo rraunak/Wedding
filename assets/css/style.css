@@ -60,7 +60,7 @@ a:hover { color: var(--maroon-900); }
 .hero-backdrop {
   position: absolute; inset: 0;
   background-image: url('../img/DSC_0859.jpeg');
-  background-size: cover; background-position: center; filter: saturate(0.9) contrast(1.05) brightness(0.9);
+  background-size: cover; background-position: center; background-repeat: no-repeat; filter: saturate(0.9) contrast(1.05) brightness(0.9);
   transform: scale(1.05);
 }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(122,12,27,.55), rgba(36,29,27,.55)); mix-blend-mode: multiply; }
@@ -193,8 +193,13 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--gold-soft);
   .nav { position: fixed; top: 60px; right: 16px; background: rgba(250, 246, 239, 0.95); border: 1px solid rgba(199,162,72,.25); border-radius: 12px; padding: 10px; flex-direction: column; gap: 10px; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(-6px); transition: opacity .2s ease, transform .2s ease; }
   .nav.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
   .hero { min-height: 100vh; }
-  .hero-backdrop { background-position: center 20%; transform: none; }
+  .hero-backdrop { background-position: center 25%; transform: none; }
   .decor-top { transform: translateY(-10%); }
+}
+
+/* On very tall/narrow screens, fit by height to avoid side crop at top */
+@media (max-aspect-ratio: 9/16) {
+  .hero-backdrop { background-size: auto 100%; background-position: center top; }
 }
 
 /* Reveal on scroll */
