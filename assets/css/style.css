@@ -192,6 +192,9 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--gold-soft);
   .nav-toggle { display: inline-flex; }
   .nav { position: fixed; top: 60px; right: 16px; background: rgba(250, 246, 239, 0.95); border: 1px solid rgba(199,162,72,.25); border-radius: 12px; padding: 10px; flex-direction: column; gap: 10px; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(-6px); transition: opacity .2s ease, transform .2s ease; }
   .nav.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .hero { min-height: 100vh; }
+  .hero-backdrop { background-position: center 20%; transform: none; }
+  .decor-top { transform: translateY(-10%); }
 }
 
 /* Reveal on scroll */
